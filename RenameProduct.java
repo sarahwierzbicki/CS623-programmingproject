@@ -14,7 +14,7 @@ public class RenameProduct {
 
     // ensure atomicity
       conn.setAutoCommit(false);
-    // ensure isolarion
+    // ensure isolation
       conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
     Statement stmt1 = null;
     try {
@@ -22,6 +22,19 @@ public class RenameProduct {
         stmt1 = conn.createStatement();
         // execute update to change name of p1 to pp1
         stmt1.executeUpdate("update prodid set name = 'pp1' where prodid = 'p1"
+
+     // output table (prodid pname, price for Product, prodid. depid, quantity for Stock
+      while (rs.next()) {
+          String prodId = rs.getString("prodid")
+          String pName = rs.getString("pname")
+          int price = rs.getInt("price")
+          String depId = rs.getString("depid")
+          int quantity = rs.getInt("quantity")
+          System.out.println(prodID + ", " + pName + ", " + price + ", " + depId + ", " + quantity);
+        }
+    } catch (SQLException e) {
+      e.printStackTrace();
+            
 
 // 1. load drivers
 // 2. create a connection
