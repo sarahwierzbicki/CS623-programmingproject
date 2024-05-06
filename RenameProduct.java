@@ -42,8 +42,8 @@ public class RenameProduct {
         // create statement 
         stmt1 = conn.createStatement();
         // execute update to change name of p1 to pp1
-        stmt1.executeUpdate("update prodid set name = 'pp1' where prodid = 'p1")
-        stmt1.executeUpdate("update prodid set name = 'pp1' where prodid = 'p1")  
+        stmt1.executeUpdate("update PRODUCT set name = 'pp1' where prodid = 'p1")
+        stmt1.executeUpdate("update STOCK set name = 'pp1' where prodid = 'p1")  
 
      // output table (prodid pname, price for Product, prodid. depid, quantity for Stock
       while (rs.next()) {
@@ -56,6 +56,14 @@ public class RenameProduct {
         }
     } catch (SQLException e) {
       e.printStackTrace();
+      conn.rollback();
+      stmt1.close();
+      conn.close(0;
+      return;
+    }
+    conn.commit();
+    stmt1.close();
+    conn.close();
             
 
 // 1. load drivers
