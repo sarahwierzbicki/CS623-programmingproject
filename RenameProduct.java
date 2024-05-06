@@ -15,6 +15,7 @@ public class RenameProduct {
 
     // ensure atomicity
       conn.setAutoCommit(false);
+    
     // ensure isolation
       conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
@@ -69,7 +70,5 @@ public class RenameProduct {
 // 1. load drivers
 // 2. create a connection
 // 3. create a statement(create table, select...)
-  stmt1 = conn.createStatement();
-  stmt1.executeUpdate(
 // 4. Execute statement
 // 5. Process the result
