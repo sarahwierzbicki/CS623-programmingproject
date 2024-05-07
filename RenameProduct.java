@@ -9,7 +9,7 @@ public class RenameProduct {
   public static void main(String args[] throws SQLException, IOException, ClassNotFoundException {
 
     // load PostgreSQL driver
-    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "sw1112")
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres")
 
     // ensure atomicity
       conn.setAutoCommit(false);
@@ -20,12 +20,13 @@ public class RenameProduct {
     // create result set and statement objects
     ResultSet rs = null;
     Statement stmt1 = null;
+    
     try {
         // create statement 
         stmt1 = conn.createStatement();
         // execute update to change name of p1 to pp1
-        stmt1.executeUpdate("update PRODUCT set name = 'pp1' where prodid = 'p1")
-        stmt1.executeUpdate("update STOCK set name = 'pp1' where prodid = 'p1")  
+        stmt1.executeUpdate("update PRODUCT set name = 'pp1' where prodId = 'p1")
+        stmt1.executeUpdate("update STOCK set name = 'pp1' where prodId = 'p1")  
 
      // output table 
       while (rs.next()) {
@@ -49,6 +50,7 @@ public class RenameProduct {
     stmt1.close();
     conn.close();
   }
+}
             
 
 
