@@ -25,8 +25,8 @@ public class RenameProduct {
         // create statement 
         stmt1 = conn.createStatement();
         // execute update to change name of p1 to pp1
-        stmt1.executeUpdate("update PRODUCT set name = 'pp1' where prodId = 'p1")
-        stmt1.executeUpdate("update STOCK set name = 'pp1' where prodId = 'p1")  
+        stmt1.executeUpdate("update PRODUCT set name = 'pp1' where prodId = 'p1'")
+        stmt1.executeUpdate("update STOCK set name = 'pp1' where prodId = 'p1'")  
 
      // output table 
       while (rs.next()) {
